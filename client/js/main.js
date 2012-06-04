@@ -1,7 +1,7 @@
 requirejs.config({
-    baseUrl: 'script/library',
+    baseUrl: 'js/lib',
     paths: {
-        application: '../application'
+        app: '../app'
     }
 });
 
