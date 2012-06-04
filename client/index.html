@@ -16,7 +16,14 @@
 
     <link rel="stylesheet" href="css/style.css">
 
-    <script data-main="js/main" src="js/lib/require.js"></script>
+    <script>
+        setTimeout(function() {
+            var script = document.createElement('script');
+            script.setAttribute("data-main", "js/main");
+            script.src = "js/lib/require.js";
+            document.body.appendChild(script);
+        }, 0);
+    </script>
 
 </head>
 

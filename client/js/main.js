@@ -9,13 +9,16 @@ requirejs.config({
         'backbone': {
             deps: ['underscore', 'jquery'],
             exports: 'Backbone'
+        },
+
+        'app/router': {
+            deps: ['backbone']
         }
     }
 });
 
-requirejs(['backbone', 'app/router'], function (Backbone, Router) {
+requirejs(['app/router'], function (Router) {
     "use strict";
 
     var router = new Router();
-    Backbone.history.start();
 });
