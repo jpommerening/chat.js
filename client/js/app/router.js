@@ -1,6 +1,5 @@
 /*global define */
-define(['backbone'], function (Backbone) {
-
+define(['backbone', 'app/controllers/login'], function (Backbone, LoginController) {
     "use strict";
 
     return Backbone.Router.extend({
@@ -10,13 +9,12 @@ define(['backbone'], function (Backbone) {
         },
 
         routes: {
-
-            '': 'start'
-
+            '': 'login'
         },
 
-        'start': function () {
-            // do something
+        'login': function () {
+            var loginController = new LoginController();
+            loginController.loginAction();
         }
     });
 
