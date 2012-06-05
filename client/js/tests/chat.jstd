@@ -1,0 +1,3 @@
+load:
+  - ../lib/jasmine.js
+  - ../lib/jasmineAdapter.js
