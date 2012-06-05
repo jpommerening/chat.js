@@ -1,0 +1,12 @@
+- Login User
+- Channel list
+- join channel
+- Broadcast "user joined"
+- write message
+- broadcast message
+- userlist
+- multiple channels
+- notification
+- highlighting
+- private messages
+
