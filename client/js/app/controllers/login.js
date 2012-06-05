@@ -1,11 +1,12 @@
 /*global define */
-define(function () {
+define(['app/models/login', 'app/views/login'], function (LoginModel, LoginView) {
     "use strict";
 
     function loginController() {}
 
     loginController.prototype.loginAction = function () {
-        console.log('This is the login Action');
+        var loginView = new LoginView();
+        loginView.render();
     };
 
     return loginController;

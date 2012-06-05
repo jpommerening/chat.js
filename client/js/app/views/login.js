@@ -22,6 +22,8 @@ define(['text!app/views/login.html'], function (template) {
         },
 
         render: function () {
+            this.$el.html(_.template(template));
+            $('body').append(this.$el);
         }
     });
 });
