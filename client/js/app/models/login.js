@@ -17,7 +17,7 @@ define(function () {
         url: 'login',
 
         login: function (nickname) {
-            this.save({nickname: nickname}, {success:_.bind(this.gotoChat, this)});
+            this.save({nickname: nickname}, {success: _.bind(this.gotoChat, this)});
         },
 
         gotoChat: function () {

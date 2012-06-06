@@ -25,7 +25,7 @@ define(['text!app/views/login.html'], function (template) {
 
         login: function (e) {
             e.preventDefault();
-            this.model.save({username: this.$('#nickname').val()});
+            this.model.login({username: this.$('#nickname').val()});
         }
     });
 });
