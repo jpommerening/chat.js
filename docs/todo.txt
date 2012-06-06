@@ -9,4 +9,5 @@
 - notification
 - highlighting
 - private messages
+- Benutzer mit dem gleichen Namen ist bereits angemeldet
 
