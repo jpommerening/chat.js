@@ -5,7 +5,8 @@ define(['app/models/login', 'app/views/login'], function (LoginModel, LoginView)
     function loginController() {}
 
     loginController.prototype.loginAction = function () {
-        var loginView = new LoginView();
+        var loginModel = new LoginModel(),
+            loginView = new LoginView({model: loginModel});
         loginView.render();
     };
 

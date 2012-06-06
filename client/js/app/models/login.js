@@ -14,5 +14,15 @@ define(function () {
 
     return Backbone.Model.extend({
 
+        url: 'login',
+
+        login: function (nickname) {
+            this.save({nickname: nickname}, {success:_.bind(this.gotoChat, this)});
+        },
+
+        gotoChat: function () {
+            window.location.hash = '#chat';
+        }
+
     });
 });

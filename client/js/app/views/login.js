@@ -6,7 +6,7 @@
  * @class views_login
  */
 
-/*global define, Backbone */
+/*global define, Backbone, $ */
 
 define(['text!app/views/login.html'], function (template) {
     "use strict";
@@ -16,14 +16,16 @@ define(['text!app/views/login.html'], function (template) {
         className: 'views_login',
         tagName: 'div',
 
-        events: {},
-
-        initialize: function () {
-        },
+        events: {'click #loginForm': 'login'},
 
         render: function () {
             this.$el.html(_.template(template));
             $('body').append(this.$el);
+        },
+
+        login: function (e) {
+            e.preventDefault();
+            this.model.save({username: this.$('#nickname').val()});
         }
     });
 });
