@@ -1,12 +1,14 @@
 /*global Backbone, callbackStack, socket */
 
+var callbackStack = null;
+
 (function () {
     "use strict";
 
     Backbone.sync = function (method, model, options) {
 
         Backbone.sync = function(method, model, options) {
-            if (undefined === callbackStack) {
+            if (null === callbackStack) {
                 callbackStack =  {
                     lastid: 0,
                     callbacks: {}
@@ -33,14 +35,13 @@
             socket.emit(url, payload);
 
             socket.on('reply', function (data) {
-
                 if (data.hasOwnProperty('token')) {
                     socket.token = data.token;
                 }
 
                 if (callbackStack.callbacks.hasOwnProperty(data.id)) {
-                    if (callbackStack.callbacks[data.id].hasOwnProperty(data.success)) {
-                        var func = callbackStack.callbacks[data.id][data.success];
+                    if (callbackStack.callbacks[data.id].hasOwnProperty('success')) {
+                        var func = callbackStack.callbacks[data.id].success;
                         if (_.isFunction(func)) {
                             func(data.payload);
                         }
