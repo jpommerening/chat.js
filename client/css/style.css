@@ -1,0 +1,21 @@
+#chatcontainer {
+    height: 400px;
+    width: 400px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border: 1px solid black;
+}
+
+.message {
+    clear: both;
+}
+
+.message .name {
+    width: 150px;
+    float: left;
+}
+
+.message .msgString {
+    width: 235px;
+    float: left;
+}

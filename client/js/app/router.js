@@ -1,39 +1,26 @@
 /*global define, Backbone, socket, io */
 
-
-var socket = null;
-
-define(['backbone', 'app/controllers/login'], function (Backbone, LoginController) {
+define(['backbone', 'socket.io', 'app/controllers/chat'], function (Backbone, io, ChatController) {
     "use strict";
-
-
 
     return Backbone.Router.extend({
 
         url: 'chat.basti.dev',
-        port: '1337',
-
+        port: '1338',
 
         initialize: function () {
             Backbone.history.start();
-
-            this._openSocket();
-        },
-
-        _openSocket: function () {
-            if (null === socket) {
-                socket = io.connect(this.url + ':' + this.port);
-            }
         },
 
         routes: {
-            '': 'login'
+            '': 'chat'
         },
 
-        'login': function () {
-            var loginController = new LoginController();
-            loginController.loginAction();
+        chat: function () {
+            var socket = io.connect(this.url + ':' + this.port),
+                chatController = new ChatController(socket);
+
+            chatController.startAction();
         }
     });
-
 });

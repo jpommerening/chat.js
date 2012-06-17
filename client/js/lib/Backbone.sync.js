@@ -43,6 +43,7 @@ var callbackStack = null;
                     if (callbackStack.callbacks[data.id].hasOwnProperty('success')) {
                         var func = callbackStack.callbacks[data.id].success;
                         if (_.isFunction(func)) {
+                            debugger;
                             func(data.payload);
                         }
                     }

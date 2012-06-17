@@ -11,13 +11,12 @@ requirejs.config({
             exports: 'Backbone'
         },
 
-        'backbone.sync': {
-            deps: ['backbone', 'socket.io'],
-            exports: 'Backbone.sync'
+        'socket.io': {
+            exports: 'io'
         },
 
         'app/router': {
-            deps: ['backbone', 'backbone.sync']
+            deps: ['backbone']
         }
     }
 });
