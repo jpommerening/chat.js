@@ -5,14 +5,14 @@ define(['text!app/views/form.html', 'app/models/message', 'app/views/message'], 
 
     return Backbone.View.extend({
 
-        className: 'form',
+        className: 'row form',
         tagName: 'div',
 
         events: {'submit #messageForm': 'submitHandle'},
 
         render: function () {
             this.$el.html(_.template(template));
-            $('body').append(this.$el);
+            $('.container').append(this.$el);
         },
 
         submitHandle: function (e) {
