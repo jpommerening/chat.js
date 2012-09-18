@@ -5,7 +5,7 @@ define(['backbone', 'socket.io', 'app/controllers/chat'], function (Backbone, io
 
     return Backbone.Router.extend({
 
-        url: document.URL,
+        url: location.host,
         port: '1338',
 
         initialize: function () {
