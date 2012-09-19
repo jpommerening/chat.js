@@ -5,7 +5,7 @@ define(['text!app/views/message.html'], function (template) {
 
     return Backbone.View.extend({
 
-        className: 'span12 message',
+        className: 'row message',
         tagName: 'div',
 
         render: function () {
