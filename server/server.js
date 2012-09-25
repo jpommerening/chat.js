@@ -18,7 +18,8 @@ http.createServer(function (req, res) {
             body += chunk;
         });
         req.on('end', function () {
-            for (var i = 0; i < sockets.length; i++) {
+            var i;
+            for (i = 0; i < sockets.length; i += 1) {
                 sockets[i].emit('message', body);
             }
         });
