@@ -1,4 +1,4 @@
-/*global define, Backbone, socket, io */
+/*global define, Backbone, socket, io, location */
 
 define(['backbone', 'socket.io', 'app/controllers/chat'], function (Backbone, io, ChatController) {
     "use strict";
