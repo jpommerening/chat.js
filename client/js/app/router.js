@@ -17,7 +17,7 @@ define(['backbone', 'socket.io', 'app/controllers/chat'], function (Backbone, io
         },
 
         chat: function () {
-            var socket = io.connect(this.url + ':' + this.port),
+            var socket = io.connect('http://' + this.url + ':' + this.port),
                 chatController = new ChatController(socket);
 
             chatController.startAction();
